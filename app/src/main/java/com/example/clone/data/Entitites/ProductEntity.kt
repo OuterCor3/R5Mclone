@@ -44,6 +44,7 @@ data class DrillEntity(
 @Entity(tableName = "electric_saw")
 data class ElectricSawEntity(
 
+
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name ="product_id")
@@ -99,6 +100,7 @@ data class VacuumEntity(
 data class HeatGunEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @PrimaryKey(autoGenerate = true)
+
     @ColumnInfo(name ="product_id")
     val productId: Int = 0,
     @ColumnInfo(name ="category")

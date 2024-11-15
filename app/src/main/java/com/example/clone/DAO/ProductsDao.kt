@@ -3,6 +3,7 @@ package com.example.clone.DAO
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Entity
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -11,7 +12,12 @@ import com.example.clone.data.Entitites.BrushCutterEntity
 import com.example.clone.data.Entitites.DrillEntity
 import com.example.clone.data.Entitites.ElectricSawEntity
 import com.example.clone.data.Entitites.GrinderEntity
+import com.example.clone.data.Entitites.HeatGunEntity
+import com.example.clone.data.Entitites.HydraulicJacksEntity
+import com.example.clone.data.Entitites.VacuumEntity
 import com.example.clone.data.Entitites.WaterPumpEntity
+import com.example.clone.data.Entitites.WeldingMachineEntity
+import org.jetbrains.annotations.ApiStatus.Internal
 
 @Dao
 interface WaterPumpDao {
@@ -87,12 +93,94 @@ interface ElectricSawDao{
     suspend fun getElectricSaw(electricsawId:Int):LiveData<ElectricSawEntity>
 }
 @Dao
-interface BrushCutterdDao{
+interface BrushCutterDao{
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBrushCutter(brushCutter:BrushCutterEntity)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateBrushCutter(brushCutter: BrushCutterEntity)
+
+    @Delete
+    suspend fun deleteBrushCutter(brushCutter: BrushCutterEntity)
+
+    @Query("SELECT * FROM brush_cutter")
+    suspend fun getAllBrushCutter():LiveData<List<BrushCutterEntity>>
+
+    @Query("SELECT * FROM brush_cutter WHERE product_id=:brushcutterId")
+    suspend fun getBrushCutter(brushcutterId:Int):LiveData<BrushCutterEntity>
+
+}
+@Dao
+interface WeldingMachineDao{
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertWeldingMachine(weldingmachine:WeldingMachineEntity)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateWeldingMachine(weldingmachine: WeldingMachineEntity)
+
+    @Delete
+    suspend fun deleteWeldingMachine(weldingmachine: WeldingMachineEntity)
+
+    @Query("SELECT * FROM welding_machine")
+    suspend fun getAllWeldingMachine():LiveData<List<WeldingMachineEntity>>
+
+    @Query("SELECT * FROM welding_machine WHERE product_id=:weldingmachineId")
+    suspend fun getWeldingMahcine(weldingmachineId:Int):LiveData<WeldingMachineEntity>
+
+
+}
+@Dao
+interface VacuumDao{
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertVacuum(vacuum:VacuumEntity)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateVacuum(vacuum: VacuumEntity)
+
+    @Delete
+    suspend fun deleteVacuum(vacuumEntity: VacuumEntity)
+
+    @Query("SELECT * FROM `vacuum`")
+    suspend fun getAllVacuum():LiveData<List<VacuumEntity>>
+
+    @Query("SELECT * FROM `vacuum` WHERE product_id=:vacuumId")
+    suspend fun getVacuum(vacuumId:Int):LiveData<VacuumEntity>
+
+
+}
+@Dao
+interface HeatGunDao{
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertHeatGun(heatgun:HeatGunEntity)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateHeatGun(heatgun: HeatGunEntity)
+
+    @Delete
+    suspend fun deleteHeatGun(heatgun: HeatGunEntity)
+
+    @Query("SELECT * FROM heat_gun")
+    suspend fun getAllHeatGun():LiveData<List<HeatGunEntity>>
+
+    @Query("SELECT * FROM heat_gun WHERE product_id=:heatgunId")
+    suspend fun getHeatGun(heatgunId:Int):LiveData<HeatGunEntity>
+}
+@Dao
+interface HydraulicJacksDao{
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertHydraulicJacks(hydraulicJacks:HydraulicJacksEntity)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateHydrauclicJacks(hydraulicJacks: HydraulicJacksEntity)
+
+    @Delete
+    suspend fun deleteHydraulicJacks(hydraulicJacks: HydraulicJacksEntity)
+
+    @Query("SELECT * FROM hydraulic_jacks")
+    suspend fun getAllHydrauicJacks():LiveData<List<HydraulicJacksEntity>>
+
+    @Query("SELECT * FROM hydraulic_jacks WHERE product_id =:hydraulicjacksId")
+    suspend fun getHydraulicJacks(hydraulicjacksId:Int):LiveData<HydraulicJacksEntity>
 
 
 }
