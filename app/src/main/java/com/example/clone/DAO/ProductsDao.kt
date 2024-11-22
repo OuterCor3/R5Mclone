@@ -31,10 +31,10 @@ interface WaterPumpDao {
     suspend fun deleteWaterpump(waterpump:WaterPumpEntity)
 
     @Query("SELECT * FROM water_pump")
-    suspend fun getAllwaterpump():LiveData<List<WaterPumpEntity>>
+     fun getAllwaterpump():LiveData<List<WaterPumpEntity>>
 
     @Query("SELECT * FROM water_pump WHERE product_id =:waterpumpId")
-    suspend fun getWaterpump(waterpumpId:Int):LiveData<WaterPumpEntity>
+     fun getWaterpump(waterpumpId:Int):LiveData<WaterPumpEntity>
 }
 
 @Dao
@@ -43,23 +43,23 @@ interface GrinderDao{
     suspend fun insertGrinder(grinder:GrinderEntity)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateGrider(grinder: GrinderEntity)
+    suspend fun updateGrinder(grinder: GrinderEntity)
 
     @Delete
     suspend fun deleteGrinder(grinder: GrinderEntity)
 
     @Query("SELECT * FROM grinder")
-    suspend fun getAllGrinder():LiveData<List<GrinderEntity>>
+     fun getAllGrinder():LiveData<List<GrinderEntity>>
 
 
     @Query("SELECT * FROM grinder WHERE product_id=:grinderId")
-    suspend fun getGrinder(grinderId:Int):LiveData<GrinderEntity>
+     fun getGrinder(grinderId:Int):LiveData<GrinderEntity>
 
 }
 @Dao
 interface DrillDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertDriill(grill:DrillEntity)
+    suspend fun insertDrill(grill:DrillEntity)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateDrill(drill:DrillEntity)
@@ -68,10 +68,10 @@ interface DrillDao {
     suspend fun delete(drill: DrillEntity)
 
     @Query("SELECT * FROM drill")
-    suspend fun getAllDrill():LiveData<List<DrillEntity>>
+     fun getAllDrill():LiveData<List<DrillEntity>>
 
     @Query("SELECT * FROM drill WHERE product_id=:drillId")
-    suspend fun getDrill(drillId:Int):LiveData<DrillEntity>
+     fun getDrill(drillId:Int):LiveData<DrillEntity>
 
 }
 @Dao
@@ -87,10 +87,10 @@ interface ElectricSawDao{
     suspend fun deleteElectricSaw(electricSaw: ElectricSawEntity)
 
     @Query("SELECT * FROM electric_saw")
-    suspend fun getAllelectricSaw():LiveData<List<ElectricSawEntity>>
+     fun getAllElectricSaw():LiveData<List<ElectricSawEntity>>
 
     @Query("SELECT * FROM electric_saw WHERE product_id=:electricsawId")
-    suspend fun getElectricSaw(electricsawId:Int):LiveData<ElectricSawEntity>
+     fun getElectricSaw(electricsawId:Int):LiveData<ElectricSawEntity>
 }
 @Dao
 interface BrushCutterDao{
@@ -104,10 +104,10 @@ interface BrushCutterDao{
     suspend fun deleteBrushCutter(brushCutter: BrushCutterEntity)
 
     @Query("SELECT * FROM brush_cutter")
-    suspend fun getAllBrushCutter():LiveData<List<BrushCutterEntity>>
+     fun getAllBrushCutter():LiveData<List<BrushCutterEntity>>
 
     @Query("SELECT * FROM brush_cutter WHERE product_id=:brushcutterId")
-    suspend fun getBrushCutter(brushcutterId:Int):LiveData<BrushCutterEntity>
+     fun getBrushCutter(brushcutterId:Int):LiveData<BrushCutterEntity>
 
 }
 @Dao
@@ -122,10 +122,10 @@ interface WeldingMachineDao{
     suspend fun deleteWeldingMachine(weldingmachine: WeldingMachineEntity)
 
     @Query("SELECT * FROM welding_machine")
-    suspend fun getAllWeldingMachine():LiveData<List<WeldingMachineEntity>>
+     fun getAllWeldingMachine():LiveData<List<WeldingMachineEntity>>
 
     @Query("SELECT * FROM welding_machine WHERE product_id=:weldingmachineId")
-    suspend fun getWeldingMahcine(weldingmachineId:Int):LiveData<WeldingMachineEntity>
+     fun getWeldingMahcine(weldingmachineId:Int):LiveData<WeldingMachineEntity>
 
 
 }
@@ -141,10 +141,10 @@ interface VacuumDao{
     suspend fun deleteVacuum(vacuumEntity: VacuumEntity)
 
     @Query("SELECT * FROM `vacuum`")
-    suspend fun getAllVacuum():LiveData<List<VacuumEntity>>
+     fun getAllVacuum():LiveData<List<VacuumEntity>>
 
     @Query("SELECT * FROM `vacuum` WHERE product_id=:vacuumId")
-    suspend fun getVacuum(vacuumId:Int):LiveData<VacuumEntity>
+     fun getVacuum(vacuumId:Int):LiveData<VacuumEntity>
 
 
 }
@@ -160,10 +160,10 @@ interface HeatGunDao{
     suspend fun deleteHeatGun(heatgun: HeatGunEntity)
 
     @Query("SELECT * FROM heat_gun")
-    suspend fun getAllHeatGun():LiveData<List<HeatGunEntity>>
+     fun getAllHeatGun():LiveData<List<HeatGunEntity>>
 
     @Query("SELECT * FROM heat_gun WHERE product_id=:heatgunId")
-    suspend fun getHeatGun(heatgunId:Int):LiveData<HeatGunEntity>
+     fun getHeatGun(heatgunId:Int):LiveData<HeatGunEntity>
 }
 @Dao
 interface HydraulicJacksDao{
@@ -177,10 +177,10 @@ interface HydraulicJacksDao{
     suspend fun deleteHydraulicJacks(hydraulicJacks: HydraulicJacksEntity)
 
     @Query("SELECT * FROM hydraulic_jacks")
-    suspend fun getAllHydrauicJacks():LiveData<List<HydraulicJacksEntity>>
+     fun getAllHydrauicJacks():LiveData<List<HydraulicJacksEntity>>
 
     @Query("SELECT * FROM hydraulic_jacks WHERE product_id =:hydraulicjacksId")
-    suspend fun getHydraulicJacks(hydraulicjacksId:Int):LiveData<HydraulicJacksEntity>
+     fun getHydraulicJacks(hydraulicjacksId:Int):LiveData<HydraulicJacksEntity>
 
 
 }
